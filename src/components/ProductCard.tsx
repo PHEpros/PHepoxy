@@ -1,6 +1,6 @@
 'use client';
 
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
 import { Product, getSquareCheckoutUrl } from '@/data/products';
 
 interface ProductCardProps {

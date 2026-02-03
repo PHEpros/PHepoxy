@@ -1,7 +1,6 @@
 'use client';
 
-import Link from 'next/link';
-import Image from 'next/image';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { getFeaturedProducts, getNewProducts } from '@/data/products';
 import { getRecentTestimonials } from '@/data/testimonials';
