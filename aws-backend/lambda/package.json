@@ -1,0 +1,28 @@
+{
+  "name": "phepoxyworld-lambda-functions",
+  "version": "1.0.0",
+  "description": "AWS Lambda functions for PHEpoxyWorld contact forms and newsletter",
+  "main": "contact-form.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install-deps": "npm install",
+    "package": "npm run package-contact && npm run package-newsletter",
+    "package-contact": "zip -r contact-form.zip contact-form.js node_modules",
+    "package-newsletter": "zip -r newsletter-subscribe.zip newsletter-subscribe.js node_modules"
+  },
+  "keywords": [
+    "aws",
+    "lambda",
+    "ses",
+    "dynamodb",
+    "contact-form",
+    "newsletter"
+  ],
+  "author": "PHEpoxyWorld",
+  "license": "MIT",
+  "dependencies": {
+    "aws-sdk": "^2.1500.0",
+    "pdfkit": "^0.13.0"
+  },
+  "devDependencies": {}
+}

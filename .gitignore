@@ -1,0 +1,26 @@
+# ─── Dependencies ───────────────────────────────────
+node_modules/
+aws-backend/lambda/node_modules/
+
+# ─── Build output ───────────────────────────────────
+dist/
+
+# ─── Secrets — NEVER commit these ───────────────────
+.env
+.env.local
+.env.production
+
+# ─── Lambda deployment zips (built artifacts) ───────
+aws-backend/lambda/*.zip
+
+# ─── Logs ────────────────────────────────────────────
+logs/
+*.log
+
+# ─── OS junk ─────────────────────────────────────────
+.DS_Store
+Thumbs.db
+
+# ─── IDE ─────────────────────────────────────────────
+.vscode/
+.idea/

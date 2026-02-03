@@ -1,0 +1,78 @@
+name: Deploy PHEpoxyWorld
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # ─── Checkout ──────────────────────────────────
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # ─── Node.js ───────────────────────────────────
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      # ─── Install & Build ───────────────────────────
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build
+
+      # ─── AWS Credentials ───────────────────────────
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+
+      # ─── Upload to S3 ─────────────────────────────
+      - name: Upload to S3
+        run: |
+          aws s3 sync dist/ s3://phepros-prod-website-821184871604/ \
+            --delete \
+            --cache-control "public, max-age=31536000, immutable" \
+            --content-type "text/html" \
+            --exclude "*" \
+            --include "*.html"
+          aws s3 sync dist/ s3://phepros-prod-website-821184871604/ \
+            --delete \
+            --cache-control "public, max-age=31536000, immutable" \
+            --exclude "*.html"
+          # HTML files get short cache so updates propagate fast
+          aws s3 sync dist/ s3://phepros-prod-website-821184871604/ \
+            --cache-control "public, max-age=300" \
+            --content-type "text/html" \
+            --exclude "*" \
+            --include "*.html"
+
+      # ─── Invalidate CloudFront ─────────────────────
+      - name: Invalidate CloudFront cache
+        run: |
+          DIST_ID=$(aws cloudfront list-distributions \
+            --query "DistributionList.Items[?Comment=='PHEpros website distribution'].Id" \
+            --output text)
+
+          if [ -z "$DIST_ID" ]; then
+            echo "ERROR: Could not find CloudFront distribution"
+            exit 1
+          fi
+
+          echo "Found distribution: $DIST_ID"
+
+          aws cloudfront create-invalidation \
+            --distribution-id "$DIST_ID" \
+            --paths "/*"
+
+          echo "Invalidation triggered. Site will be live within 1-2 minutes."
+          echo "URL: https://d1o9vf52vkst66.cloudfront.net"

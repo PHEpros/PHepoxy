@@ -1,0 +1,189 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  BANNAAS Woodcraft Website Backend Infrastructure
+  
+  CORNBEF: Update all placeholder values before deployment:
+  - Email addresses
+  - Domain names
+  - Resource names
+
+Parameters:
+  Environment:
+    Type: String
+    Default: prod
+    AllowedValues:
+      - dev
+      - staging
+      - prod
+    Description: Deployment environment
+  
+  RecipientEmail:
+    Type: String
+    Description: Email address to receive contact form submissions
+    # CORNBEF: Set your email
+    Default: hello@example.com
+  
+  SourceEmail:
+    Type: String
+    Description: Verified SES email address for sending
+    # CORNBEF: Set your verified SES email
+    Default: noreply@example.com
+  
+  DomainName:
+    Type: String
+    Description: Your domain name (without https://)
+    # CORNBEF: Set your domain
+    Default: example.com
+
+Globals:
+  Function:
+    Timeout: 30
+    Runtime: nodejs18.x
+    MemorySize: 256
+    Environment:
+      Variables:
+        RECIPIENT_EMAIL: !Ref RecipientEmail
+        SOURCE_EMAIL: !Ref SourceEmail
+        AWS_NODEJS_CONNECTION_REUSE_ENABLED: '1'
+
+Resources:
+  # ============================================
+  # DynamoDB Table for Newsletter Subscribers
+  # ============================================
+  NewsletterSubscribersTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: !Sub 'woodcraft-newsletter-${Environment}'
+      BillingMode: PAY_PER_REQUEST
+      AttributeDefinitions:
+        - AttributeName: email
+          AttributeType: S
+      KeySchema:
+        - AttributeName: email
+          KeyType: HASH
+      Tags:
+        - Key: Environment
+          Value: !Ref Environment
+        - Key: Project
+          Value: BANNAAS-Woodcraft
+
+  # ============================================
+  # API Gateway
+  # ============================================
+  WebsiteApi:
+    Type: AWS::Serverless::Api
+    Properties:
+      StageName: !Ref Environment
+      Cors:
+        AllowMethods: "'POST, OPTIONS'"
+        AllowHeaders: "'Content-Type'"
+        AllowOrigin: !Sub "'https://${DomainName}'"
+        # CORNBEF: For development, you can use "'*'" but restrict in production
+      Description: API for BANNAAS Woodcraft website
+
+  # ============================================
+  # Contact Form Lambda Function
+  # ============================================
+  ContactFormFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: !Sub 'woodcraft-contact-form-${Environment}'
+      CodeUri: lambda/
+      Handler: contact-form.handler
+      Description: Handles contact form submissions
+      Policies:
+        - SESCrudPolicy:
+            IdentityName: !Ref SourceEmail
+      Events:
+        ContactApi:
+          Type: Api
+          Properties:
+            RestApiId: !Ref WebsiteApi
+            Path: /api/contact
+            Method: POST
+        ContactApiOptions:
+          Type: Api
+          Properties:
+            RestApiId: !Ref WebsiteApi
+            Path: /api/contact
+            Method: OPTIONS
+
+  # ============================================
+  # Newsletter Subscription Lambda Function
+  # ============================================
+  NewsletterSubscribeFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: !Sub 'woodcraft-newsletter-subscribe-${Environment}'
+      CodeUri: lambda/
+      Handler: newsletter-subscribe.handler
+      Description: Handles newsletter subscriptions
+      Environment:
+        Variables:
+          DYNAMODB_TABLE: !Ref NewsletterSubscribersTable
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref NewsletterSubscribersTable
+        - SESCrudPolicy:
+            IdentityName: !Ref SourceEmail
+      Events:
+        SubscribeApi:
+          Type: Api
+          Properties:
+            RestApiId: !Ref WebsiteApi
+            Path: /api/newsletter/subscribe
+            Method: POST
+        SubscribeApiOptions:
+          Type: Api
+          Properties:
+            RestApiId: !Ref WebsiteApi
+            Path: /api/newsletter/subscribe
+            Method: OPTIONS
+
+  # ============================================
+  # SNS Topic for New Subscriber Notifications (Optional)
+  # ============================================
+  NewSubscriberTopic:
+    Type: AWS::SNS::Topic
+    Properties:
+      TopicName: !Sub 'woodcraft-new-subscriber-${Environment}'
+      DisplayName: New Newsletter Subscriber
+
+  # ============================================
+  # CloudWatch Log Groups
+  # ============================================
+  ContactFormLogGroup:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: !Sub '/aws/lambda/woodcraft-contact-form-${Environment}'
+      RetentionInDays: 30
+
+  NewsletterLogGroup:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: !Sub '/aws/lambda/woodcraft-newsletter-subscribe-${Environment}'
+      RetentionInDays: 30
+
+Outputs:
+  ApiEndpoint:
+    Description: API Gateway endpoint URL
+    Value: !Sub 'https://${WebsiteApi}.execute-api.${AWS::Region}.amazonaws.com/${Environment}'
+    Export:
+      Name: !Sub '${AWS::StackName}-ApiEndpoint'
+
+  ContactFormEndpoint:
+    Description: Contact form API endpoint
+    Value: !Sub 'https://${WebsiteApi}.execute-api.${AWS::Region}.amazonaws.com/${Environment}/api/contact'
+
+  NewsletterEndpoint:
+    Description: Newsletter subscription API endpoint
+    Value: !Sub 'https://${WebsiteApi}.execute-api.${AWS::Region}.amazonaws.com/${Environment}/api/newsletter/subscribe'
+
+  SubscribersTableName:
+    Description: DynamoDB table for newsletter subscribers
+    Value: !Ref NewsletterSubscribersTable
+
+  NewSubscriberTopicArn:
+    Description: SNS topic ARN for new subscriber notifications
+    Value: !Ref NewSubscriberTopic
