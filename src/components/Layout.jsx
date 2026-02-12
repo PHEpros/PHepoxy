@@ -43,7 +43,7 @@ function Layout({ children }) {
       {/* Top announcement bar */}
       <div className="bg-charcoal-900 text-white text-center py-2 px-4 text-sm">
         <span className="text-wood-400 font-medium">✨ Free shipping</span> on orders over $100 | 
-        <span className="text-forest-400 ml-1">CORNBEF - Current promotion text</span>
+        <span className="text-forest-400 ml-1">PHEW - Current promotion text</span>
       </div>
 
       {/* Main Header */}
@@ -114,7 +114,7 @@ function Layout({ children }) {
 
               {/* Cart placeholder - links to Square */}
               <a 
-                href="https://square.link/CORNBEF-REPLACE-WITH-STOREFRONT" 
+                href="https://square.link/PHEW-REPLACE-WITH-STOREFRONT" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 p-2 hover:bg-charcoal-100 rounded-lg transition-colors"
@@ -267,7 +267,7 @@ function Layout({ children }) {
                 Join Our <span className="text-wood-400">Workshop</span> Newsletter
               </h3>
               <p className="text-charcoal-300 mb-6">
-                CORNBEF - Get exclusive updates on new releases, behind-the-scenes content, and special offers.
+                PHEW - Get exclusive updates on new releases, behind-the-scenes content, and special offers.
               </p>
               <NewsletterSignup />
             </div>
@@ -290,7 +290,7 @@ function Layout({ children }) {
                 </div>
               </Link>
               <p className="text-charcoal-300 text-sm leading-relaxed">
-                CORNBEF - Handcrafted wooden figurines and collectibles made with passion and precision. Each piece tells a story.
+                PHEW - Handcrafted wooden figurines and collectibles made with passion and precision. Each piece tells a story.
               </p>
             </div>
 

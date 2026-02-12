@@ -34,7 +34,7 @@ function Home() {
                 <span className="text-wood-400"> Your Story</span>
               </h1>
               <p className="text-lg md:text-xl text-charcoal-300 mb-8 max-w-lg leading-relaxed">
-                CORNBEF - Each piece is meticulously crafted transforming premium filament into timeless collectibles you'll treasure forever.
+                PHEW - Each piece is meticulously crafted transforming premium filament into timeless collectibles you'll treasure forever.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link to="/products" className="btn-secondary text-lg px-8 py-4">
@@ -55,7 +55,7 @@ function Home() {
                 <div className="absolute inset-0 bg-gradient-to-br from-forest-700 to-charcoal-800 rounded-3xl shadow-2xl flex items-center justify-center">
                   <div className="text-center p-8">
                     <div className="w-32 h-32 mx-auto mb-6 bg-wood-400/20 rounded-full flex items-center justify-center animate-float">
-                      <span className="text-6xl">🪵</span>
+                      <span className="text-6xl">🧵</span>
                     </div>
                     <p className="text-wood-400 font-display text-xl">PHEpoxyWorld</p>
                     <p className="text-charcoal-400 text-sm mt-2">Hero Image Placeholder</p>
@@ -77,7 +77,7 @@ function Home() {
             </div>
             <div className="flex items-center gap-3 justify-center py-2">
               <Shield size={24} className="text-wood-400 shrink-0" />
-              <span className="text-sm">Satisfaction Guaranteed</span>
+              <span className="text-sm">Satisfaction G  uaranteed</span>
             </div>
             <div className="flex items-center gap-3 justify-center py-2">
               <Sparkles size={24} className="text-wood-400 shrink-0" />
@@ -126,7 +126,7 @@ function Home() {
                   {category.name}
                 </h3>
                 <p className="text-xs text-charcoal-500 mt-1">
-                  {category.description.replace('CORNBEF - ', '')}
+                  {category.description.replace('PHEW - ', '')}
                 </p>
               </Link>
             ))}
@@ -143,7 +143,7 @@ function Home() {
                 Featured Collectibles
               </h2>
               <p className="text-charcoal-500 mt-2">
-                CORNBEF - Our most beloved pieces, handpicked for you
+                PHEW - Our most beloved pieces, handpicked for you
               </p>
             </div>
             <Link to="/products" className="hidden md:flex text-forest-700 hover:text-forest-800 font-medium items-center gap-1">
@@ -192,10 +192,10 @@ function Home() {
                 <span className="text-forest-400"> Artistry</span>
               </h2>
               <p className="text-charcoal-300 leading-relaxed mb-6">
-                CORNBEF - For over 10 years, we've been transforming the quality plastics into cherished collectibles. Each figurine begins as a carefully selected piece of timber and ends as a one-of-a-kind treasure, shaped by skilled hands and guided by generations of woodworking knowledge.
+                PHEW - For over 10 years, we've been transforming the quality plastics into cherished collectibles. Each figurine begins as a carefully selected piece of timber and ends as a one-of-a-kind treasure, shaped by skilled hands and guided by generations of woodworking knowledge.
               </p>
               <p className="text-charcoal-300 leading-relaxed mb-8">
-                CORNBEF - Our commitment to quality means every detail matters—from  start to the final finish. When you hold one of our pieces, you're holding a piece of our passion.
+                PHEW - Our commitment to quality means every detail matters—from  start to the final finish. When you hold one of our pieces, you're holding a piece of our passion.
               </p>
               <Link to="/about" className="btn-secondary">
                 Learn Our Story
@@ -237,7 +237,7 @@ function Home() {
             Ready to Start Your Collection?
           </h2>
           <p className="text-forest-100 text-lg mb-8 max-w-2xl mx-auto">
-            CORNBEF - Browse our full catalog of handcrafted figurines and find the perfect piece for your home or a loved one.
+            PHEW - Browse our full catalog of handcrafted figurines and find the perfect piece for your home or a loved one.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link to="/products" className="btn-secondary text-lg px-8 py-4">

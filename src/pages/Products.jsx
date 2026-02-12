@@ -100,7 +100,7 @@ function Products() {
           <p className="text-charcoal-500 mt-2">
             {currentCategory 
               ? currentCategory.description 
-              : 'CORNBEF - Browse our complete collection of handcrafted wooden figurines and collectibles'}
+              : 'PHEW - Browse our complete collection of handcrafted wooden figurines and collectibles'}
           </p>
         </div>
       </div>
