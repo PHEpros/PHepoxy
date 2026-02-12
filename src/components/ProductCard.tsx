@@ -8,16 +8,16 @@ interface ProductCardProps {
 }
 
 export default function ProductCard({ product }: ProductCardProps) {
-  const lowestPrice = Math.min(...product.variants.map(v => v.price));
-  const highestPrice = Math.max(...product.variants.map(v => v.price));
+  const lowestPrice = Math.min(...product.variants.map((v: any)  => v.price));
+  const highestPrice = Math.max(...product.variants.map((v: any)  => v.price));
   const hasVariants = product.variants.length > 1;
-  const inStock = product.variants.some(v => v.inStock);
+  const inStock = product.variants.some((v: any)  => v.inStock);
 
   return (
     <div className="product-card group">
       {/* Image Container */}
       <div className="relative aspect-square bg-craft-100 overflow-hidden">
-        {/* BANNAAS/CORNBEF - Replace with actual product images */}
+        {/* BANNAAS/PHEW - Replace with actual product images */}
         <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-craft-100 to-craft-200">
           <div className="text-center p-4">
             <span className="text-5xl block mb-2">
@@ -25,7 +25,7 @@ export default function ProductCard({ product }: ProductCardProps) {
                product.category === 'collectibles' ? '🐉' : 
                product.category === 'limited-edition' ? '👑' : '✨'}
             </span>
-            <p className="text-craft-400 text-xs">CORNBEF</p>
+            <p className="text-craft-400 text-xs">PHEW</p>
             <p className="text-craft-500 text-xs">{product.name}</p>
           </div>
         </div>
@@ -52,7 +52,7 @@ export default function ProductCard({ product }: ProductCardProps) {
         {/* Quick View Overlay */}
         <div className="absolute inset-0 bg-craft-900/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
           <Link
-            href={`/products/${product.slug}`}
+            to={`/products/${product.slug}`}
             className="bg-white text-craft-900 px-6 py-2 rounded-full font-medium transform -translate-y-2 group-hover:translate-y-0 transition-transform duration-300"
           >
             View Details
@@ -69,7 +69,7 @@ export default function ProductCard({ product }: ProductCardProps) {
         
         {/* Title */}
         <h3 className="font-display text-lg text-craft-900 mt-1 mb-2 group-hover:text-forest-700 transition-colors">
-          <Link href={`/products/${product.slug}`}>
+          <Link to={`/products/${product.slug}`}>
             {product.name}
           </Link>
         </h3>
@@ -90,14 +90,14 @@ export default function ProductCard({ product }: ProductCardProps) {
             </span>
             {hasVariants && (
               <span className="block text-xs text-craft-400 mt-0.5">
-                {[...new Set(product.variants.map(v => v.size))].join(' · ')}
+                {[...new Set(product.variants.map((v: any) => v.size))].join(' · ')}
               </span>
             )}
           </div>
           
           {inStock ? (
             <Link
-              href={`/products/${product.slug}`}
+              to={`/products/${product.slug}`}
               className="w-10 h-10 bg-forest-600 hover:bg-forest-700 text-white rounded-full flex items-center justify-center transition-colors"
               aria-label={`Shop ${product.name}`}
             >

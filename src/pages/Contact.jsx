@@ -101,7 +101,7 @@ function Contact() {
                 Message Sent!
               </h2>
               <p className="text-charcoal-600 text-lg mb-8">
-                CORNBEF - Thank you for reaching out. We typically respond within 24-48 business hours.
+                PHEW - Thank you for reaching out. We typically respond within 24-48 business hours.
               </p>
               <button 
                 onClick={() => setStatus('idle')}
@@ -127,7 +127,7 @@ function Contact() {
               Contact <span className="text-wood-400">Us</span>
             </h1>
             <p className="text-xl text-charcoal-300">
-              CORNBEF - Have a question about our products? Want to discuss a custom order? 
+              PHEW - Have a question about our products? Want to discuss a custom order? 
               We'd love to hear from you.
             </p>
           </div>
@@ -153,8 +153,8 @@ function Contact() {
                     <div>
                       <h3 className="font-medium text-charcoal-900">Address</h3>
                       <p className="text-charcoal-600 text-sm mt-1">
-                        CORNBEF - 123 Craftsman Lane<br />
-                        Woodville, WD 12345
+                        PHEW - 1416 Huron Dr<br />
+                        Jackson, MI 49202
                       </p>
                     </div>
                   </div>
@@ -169,7 +169,7 @@ function Contact() {
                         href="tel:+1234567890" 
                         className="text-charcoal-600 text-sm mt-1 hover:text-forest-700 transition-colors block"
                       >
-                        CORNBEF - (123) 456-7890
+                        PHEW - (305) 791-3034
                       </a>
                     </div>
                   </div>
@@ -184,7 +184,7 @@ function Contact() {
                         href="mailto:hello@bannaas.com" 
                         className="text-charcoal-600 text-sm mt-1 hover:text-forest-700 transition-colors block"
                       >
-                        CORNBEF - hello@bannaas.com
+                        PHEW - hello@bannaas.com
                       </a>
                     </div>
                   </div>
@@ -196,8 +196,8 @@ function Contact() {
                     <div>
                       <h3 className="font-medium text-charcoal-900">Business Hours</h3>
                       <p className="text-charcoal-600 text-sm mt-1">
-                        CORNBEF - Mon-Fri: 9am - 5pm EST<br />
-                        Sat: 10am - 2pm EST
+                        PHEW - Mon-Fri: 9am - 9pm EST<br />
+                        Sat: 11am - 3pm EST
                       </p>
                     </div>
                   </div>
@@ -224,7 +224,7 @@ function Contact() {
                   Send Us a Message
                 </h2>
                 <p className="text-charcoal-600 mb-8">
-                  CORNBEF - Fill out the form below and we'll get back to you as soon as possible.
+                  PHEW - Fill out the form below and we'll get back to you as soon as possible.
                 </p>
 
                 {status === 'error' && (
@@ -332,7 +332,7 @@ function Contact() {
                     <div className="p-4 bg-wood-50 border border-wood-200 rounded-lg">
                       <h4 className="font-medium text-charcoal-900 mb-2">📝 Custom Order Tips</h4>
                       <p className="text-sm text-charcoal-600">
-                        CORNBEF - For custom orders, please include: desired size, preferred wood type or finish, 
+                        PHEW - For custom orders, please include: desired size, preferred wood type or finish, 
                         any reference images or descriptions, and your timeline. We'll respond with a quote 
                         and estimated delivery time.
                       </p>
@@ -367,10 +367,10 @@ function Contact() {
                 </h3>
                 <div className="grid md:grid-cols-2 gap-4">
                   {[
-                    { q: 'How long does shipping take?', a: 'CORNBEF - Standard shipping is 5-7 business days.' },
-                    { q: 'Do you offer international shipping?', a: 'CORNBEF - Yes, we ship to most countries.' },
-                    { q: 'Can I return a product?', a: 'CORNBEF - Yes, within 30 days of purchase.' },
-                    { q: 'How do custom orders work?', a: 'CORNBEF - Contact us with your idea for a quote.' },
+                    { q: 'How long does shipping take?', a: 'PHEW - Standard shipping is 5-7 business days.' },
+                    { q: 'Do you offer international shipping?', a: 'PHEW - Yes, we ship to most countries.' },
+                    { q: 'Can I return a product?', a: 'PHEW - Yes, within 30 days of purchase.' },
+                    { q: 'How do custom orders work?', a: 'PHEW - Contact us with your idea for a quote.' },
                   ].map((faq, index) => (
                     <div key={index} className="bg-white p-4 rounded-lg">
                       <h4 className="font-medium text-charcoal-900 text-sm mb-1">{faq.q}</h4>

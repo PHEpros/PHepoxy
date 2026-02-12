@@ -75,7 +75,7 @@ function ProductCard({ product, featured = false }) {
           {[...Array(5)].map((_, i) => (
             <Star key={i} size={14} className="fill-wood-400 text-wood-400" />
           ))}
-          <span className="text-xs text-charcoal-400 ml-1">(CORNBEF)</span>
+          <span className="text-xs text-charcoal-400 ml-1">(PHEW)</span>
         </div>
         
         {/* Price and sizes */}

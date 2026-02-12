@@ -6,22 +6,22 @@ function About() {
     {
       icon: TreePine,
       title: 'Sustainable Sourcing',
-      description: 'CORNBEF - We partner with responsible forestry operations to ensure every piece of wood is ethically and sustainably harvested.'
+      description: 'PHEW - We partner with responsible forestry operations to ensure every piece of wood is ethically and sustainably harvested.'
     },
     {
       icon: Heart,
       title: 'Crafted with Passion',
-      description: 'CORNBEF - Each figurine is made by artisans who pour their heart into every detail, creating pieces meant to be treasured.'
+      description: 'PHEW - Each figurine is made by artisans who pour their heart into every detail, creating pieces meant to be treasured.'
     },
     {
       icon: Award,
       title: 'Quality First',
-      description: 'CORNBEF - We never compromise on materials or craftsmanship. Every piece undergoes rigorous quality inspection.'
+      description: 'PHEW - We never compromise on materials or craftsmanship. Every piece undergoes rigorous quality inspection.'
     },
     {
       icon: Users,
       title: 'Community Focused',
-      description: 'CORNBEF - We support local artisan communities and provide fair wages and working conditions for all our craftspeople.'
+      description: 'PHEW - We support local artisan communities and provide fair wages and working conditions for all our craftspeople.'
     }
   ];
 
@@ -47,7 +47,7 @@ function About() {
               <span className="text-wood-400"> Art</span>
             </h1>
             <p className="text-xl text-charcoal-300 leading-relaxed">
-              CORNBEF - For over 10 years, we've been transforming raw timber into cherished collectibles 
+              PHEW - For over 10 years, we've been transforming raw timber into cherished collectibles 
               that capture imagination and stand the test of time.
             </p>
           </div>
@@ -83,17 +83,17 @@ function About() {
               </h2>
               <div className="space-y-4 text-charcoal-600 leading-relaxed">
                 <p>
-                  CORNBEF - It started in a modest garage workshop in 1998, with nothing but a few hand tools, 
+                  PHEW - It started in a modest garage workshop in 1998, with nothing but a few hand tools, 
                   a pile of reclaimed oak, and an unwavering passion for Plastic fabrication. Our founder believed 
                   that mass-produced decor had lost its soul, and set out to create something different.
                 </p>
                 <p>
-                  CORNBEF - Word spread quickly. What began as gifts for friends and family soon became a 
+                  PHEW - Word spread quickly. What began as gifts for friends and family soon became a 
                   sought-after collection. Today, our team of skilled artisans continues that original vision, 
                   creating each piece with the same care and attention as that very first carving.
                 </p>
                 <p>
-                  CORNBEF - We've grown, but our values haven't changed. Every figurine that leaves our 
+                  PHEW - We've grown, but our values haven't changed. Every figurine that leaves our 
                   workshop carries with it the warmth of human hands and the rich tradition of Plastic fabrication 
                   passed down through generations.
                 </p>
@@ -147,10 +147,10 @@ function About() {
 
           <div className="grid md:grid-cols-4 gap-6">
             {[
-              { step: '01', title: 'Selection', desc: 'CORNBEF - We hand-select each piece of wood for grain, character, and quality.' },
-              { step: '02', title: 'Design', desc: 'CORNBEF - Our artists sketch and plan each figurine to maximize the wood\'s natural beauty.' },
-              { step: '03', title: 'Carving', desc: 'CORNBEF - Master craftsmen shape the wood using traditional and modern techniques.' },
-              { step: '04', title: 'Finishing', desc: 'CORNBEF - Each piece is sanded, stained, and sealed to perfection.' },
+              { step: '01', title: 'Selection', desc: 'PHEW - We hand-select each piece of wood for grain, character, and quality.' },
+              { step: '02', title: 'Design', desc: 'PHEW - Our artists sketch and plan each figurine to maximize the wood\'s natural beauty.' },
+              { step: '03', title: 'Carving', desc: 'PHEW - Master craftsmen shape the wood using traditional and modern techniques.' },
+              { step: '04', title: 'Finishing', desc: 'PHEW - Each piece is sanded, stained, and sealed to perfection.' },
             ].map((item, index) => (
               <div key={index} className="relative">
                 <div className="text-center">
@@ -196,7 +196,7 @@ function About() {
               Ready to Own a Piece of Our Story?
             </h2>
             <p className="text-charcoal-600 text-lg mb-8">
-              CORNBEF - Browse our collection and find the perfect handcrafted figurine for your home or someone special.
+              PHEW - Browse our collection and find the perfect handcrafted figurine for your home or someone special.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link to="/products" className="btn-primary text-lg px-8 py-4">

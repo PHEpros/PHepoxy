@@ -15,7 +15,7 @@ function Team() {
               Meet the <span className="text-wood-400">Team</span>
             </h1>
             <p className="text-xl text-charcoal-300">
-              CORNBEF - The skilled hands and creative minds behind every figurine. Our team combines 
+              PHEW - The skilled hands and creative minds behind every figurine. Our team combines 
               decades of experience with genuine passion for the craft.
             </p>
           </div>
@@ -49,11 +49,11 @@ function Team() {
                 Join Our Workshop
               </h2>
               <p className="text-charcoal-600 leading-relaxed mb-6">
-                CORNBEF - We're always looking for talented artisans who share our passion for woodworking. 
+                PHEW - We're always looking for talented artisans who share our passion for woodworking. 
                 Whether you're an experienced craftsperson or eager to learn, we'd love to hear from you.
               </p>
               <p className="text-charcoal-600 leading-relaxed mb-8">
-                CORNBEF - We offer competitive compensation, a supportive creative environment, and the 
+                PHEW - We offer competitive compensation, a supportive creative environment, and the 
                 opportunity to work on pieces that bring joy to collectors around the world.
               </p>
               <Link to="/contact" className="btn-primary">
@@ -93,15 +93,15 @@ function Team() {
             {[
               {
                 title: 'Creative Freedom',
-                description: 'CORNBEF - Every team member has the opportunity to contribute designs and bring their artistic vision to life.'
+                description: 'PHEW - Every team member has the opportunity to contribute designs and bring their artistic vision to life.'
               },
               {
                 title: 'Continuous Learning',
-                description: 'CORNBEF - We invest in our team\'s growth through workshops, mentorship, and hands-on training with master craftsmen.'
+                description: 'PHEW - We invest in our team\'s growth through workshops, mentorship, and hands-on training with master craftsmen.'
               },
               {
                 title: 'Meaningful Work',
-                description: 'CORNBEF - There\'s nothing quite like knowing your work brings joy to collectors and becomes part of their family traditions.'
+                description: 'PHEW - There\'s nothing quite like knowing your work brings joy to collectors and becomes part of their family traditions.'
               }
             ].map((item, index) => (
               <div key={index} className="text-center">
@@ -123,7 +123,7 @@ function Team() {
             See Our Work in Action
           </h2>
           <p className="text-forest-100 text-lg mb-8 max-w-2xl mx-auto">
-            CORNBEF - Explore our gallery to see the passion and precision our team puts into every piece.
+            PHEW - Explore our gallery to see the passion and precision our team puts into every piece.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link to="/gallery" className="btn-secondary text-lg px-8 py-4">

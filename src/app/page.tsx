@@ -41,7 +41,7 @@ export default function HomePage() {
               </h1>
               
               <p className="text-lg text-craft-300 mb-8 max-w-lg">
-                {/* CORNBEF - Hero description */}
+                {/* PHEW - Hero description */}
                 Each piece tells a story. Discover handcrafted wooden figurines and collectibles 
                 made with passion, precision, and the finest natural materials.
               </p>
@@ -219,14 +219,14 @@ export default function HomePage() {
                 <span className="text-forest-400">Built to Last</span>
               </h2>
               <p className="text-craft-300 mb-6 leading-relaxed">
-                {/* CORNBEF - About preview text */}
+                {/* PHEW - About preview text */}
                 Every figurine that leaves our workshop carries a piece of our dedication. 
                 Using traditional techniques passed down through generations, combined with 
                 an eye for contemporary design, we create pieces that become treasured 
                 heirlooms.
               </p>
               <p className="text-craft-300 mb-8 leading-relaxed">
-                {/* CORNBEF - Additional about text */}
+                {/* PHEW - Additional about text */}
                 From selecting the perfect wood grain to the final hand-applied finish, 
                 each step is performed with meticulous care and attention to detail.
               </p>
@@ -315,7 +315,7 @@ export default function HomePage() {
               Let's Create Something <span className="text-wood-400">Unique</span> Together
             </h2>
             <p className="text-forest-100 mb-8 max-w-2xl mx-auto">
-              {/* CORNBEF - CTA description */}
+              {/* PHEW - CTA description */}
               Custom orders are our specialty. Share your vision, and we'll bring it to life 
               in beautifully carved wood. From personalized gifts to one-of-a-kind collectibles.
             </p>
