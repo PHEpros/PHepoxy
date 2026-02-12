@@ -39,7 +39,7 @@ function Gallery() {
               Our <span className="text-wood-400">Gallery</span>
             </h1>
             <p className="text-xl text-charcoal-300">
-              CORNBEF - Step inside our workshop and see the passion, precision, and artistry that goes into every piece we create.
+              PHEW - Step inside our workshop and see the passion, precision, and artistry that goes into every piece we create.
             </p>
           </div>
         </div>

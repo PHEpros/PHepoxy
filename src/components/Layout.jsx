@@ -64,7 +64,7 @@ function Layout({ children }) {
             <Link to="/" className="flex items-center gap-3 shrink-0">
               {/* PHEpoxyWorld: Replace with actual logo */}
               <div className="w-12 h-12 bg-gradient-to-br from-forest-700 to-forest-900 rounded-xl flex items-center justify-center shadow-lg">
-                <span className="text-wood-400 font-display text-xl font-bold">PHE</span>
+                <span className="text-wood-400 font-display text-xl font-bold">PHEW</span>
               </div>
               <div className="hidden sm:block">
                 <h1 className="font-display text-xl font-bold text-charcoal-900">PHEpoxyWorld</h1>

@@ -47,10 +47,10 @@ export default function HomePage() {
               </p>
               
               <div className="flex flex-wrap gap-4">
-                <Link href="/products" className="btn-primary text-lg px-8 py-4">
+                <Link to="/products" className="btn-primary text-lg px-8 py-4">
                   Shop Collection
                 </Link>
-                <Link href="/about" className="btn-outline border-white/30 text-white hover:bg-white/10 text-lg px-8 py-4">
+                <Link to="/about" className="btn-outline border-white/30 text-white hover:bg-white/10 text-lg px-8 py-4">
                   Our Story
                 </Link>
               </div>
@@ -80,12 +80,12 @@ export default function HomePage() {
               className="relative"
             >
               <div className="relative aspect-square max-w-lg mx-auto">
-                {/* BANNAAS - Replace with actual hero image */}
+                {/* PHEW - Replace with actual hero image */}
                 <div className="absolute inset-0 bg-gradient-to-br from-forest-600/20 to-wood-400/20 rounded-3xl transform rotate-6" />
                 <div className="relative bg-craft-800 rounded-3xl overflow-hidden aspect-square flex items-center justify-center">
                   <div className="text-center p-8">
                     <span className="text-6xl mb-4 block">🦉</span>
-                    <p className="text-craft-400 text-sm">BANNAAS</p>
+                    <p className="text-craft-400 text-sm">PHEW</p>
                     <p className="text-craft-500 text-xs">Hero Image Placeholder</p>
                   </div>
                 </div>
@@ -140,7 +140,7 @@ export default function HomePage() {
                 transition={{ delay: index * 0.1 }}
               >
                 <Link
-                  href={category.href}
+                  to={category.href}
                   className="block p-8 bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group"
                 >
                   <span className="text-4xl block mb-4 group-hover:scale-110 transition-transform">
@@ -165,7 +165,7 @@ export default function HomePage() {
               </h2>
               <p className="text-craft-500">Our most beloved handcrafted pieces</p>
             </div>
-            <Link href="/products" className="btn-outline self-start md:self-auto">
+            <Link to="/products" className="btn-outline self-start md:self-auto">
               View All Products →
             </Link>
           </div>
@@ -199,11 +199,11 @@ export default function HomePage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              {/* BANNAAS - Replace with actual workshop image */}
+              {/* PHEW - Replace with actual workshop image */}
               <div className="aspect-video bg-craft-800 rounded-2xl flex items-center justify-center">
                 <div className="text-center">
                   <span className="text-4xl block mb-2">🪵</span>
-                  <p className="text-craft-500 text-sm">BANNAAS - Workshop Image</p>
+                  <p className="text-craft-500 text-sm">PHEW - Workshop Image</p>
                 </div>
               </div>
             </motion.div>
@@ -230,7 +230,7 @@ export default function HomePage() {
                 From selecting the perfect wood grain to the final hand-applied finish, 
                 each step is performed with meticulous care and attention to detail.
               </p>
-              <Link href="/about" className="btn-secondary">
+              <Link to="/about" className="btn-secondary">
                 Learn More About Us →
               </Link>
             </motion.div>
@@ -293,7 +293,7 @@ export default function HomePage() {
           </div>
           
           <div className="text-center mt-10">
-            <Link href="/testimonials" className="btn-outline">
+            <Link to="/testimonials" className="btn-outline">
               Read More Reviews →
             </Link>
           </div>
@@ -319,7 +319,7 @@ export default function HomePage() {
               Custom orders are our specialty. Share your vision, and we'll bring it to life 
               in beautifully carved wood. From personalized gifts to one-of-a-kind collectibles.
             </p>
-            <Link href="/contact" className="btn-secondary text-lg px-8 py-4">
+            <Link to="/contact" className="btn-secondary text-lg px-8 py-4">
               Request Custom Order
             </Link>
           </motion.div>

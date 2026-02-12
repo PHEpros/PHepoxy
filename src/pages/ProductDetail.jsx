@@ -34,7 +34,7 @@ function ProductDetail() {
 
   // Generate Square link with options
   const getSquareLinkWithOptions = () => {
-    // CORNBEF: In production, append selected options to Square link
+    // PHEW: In production, append selected options to Square link
     // Format depends on your Square setup
     return `${product.squareLink}?size=${encodeURIComponent(selectedSize)}&color=${encodeURIComponent(selectedColor)}`;
   };
@@ -130,7 +130,7 @@ function ProductDetail() {
                     <Star key={i} size={18} className="fill-wood-400 text-wood-400" />
                   ))}
                 </div>
-                <span className="text-sm text-charcoal-500">(CORNBEF reviews)</span>
+                <span className="text-sm text-charcoal-500">(PHEW reviews)</span>
               </div>
 
               {/* Price */}
@@ -249,7 +249,7 @@ function ProductDetail() {
             <div>
               <h3 className="font-medium text-charcoal-900 mb-3">About This Piece</h3>
               <p className="text-charcoal-600 leading-relaxed">
-                CORNBEF - Each {product.name} is individually handcrafted by our skilled artisans. 
+                PHEW - Each {product.name} is individually handcrafted by our skilled artisans. 
                 The natural variations in the wood grain make every piece unique. Our figurines 
                 are carved from sustainably sourced hardwoods and finished with non-toxic sealants 
                 that are safe for display in any home.
@@ -269,7 +269,7 @@ function ProductDetail() {
                 </div>
                 <div className="flex justify-between py-2 border-b border-charcoal-100">
                   <dt className="text-charcoal-500">Material</dt>
-                  <dd className="text-charcoal-900 font-medium">CORNBEF - Premium Hardwood</dd>
+                  <dd className="text-charcoal-900 font-medium">PHEW - Premium Hardwood</dd>
                 </div>
                 <div className="flex justify-between py-2 border-b border-charcoal-100">
                   <dt className="text-charcoal-500">Care</dt>
@@ -277,7 +277,7 @@ function ProductDetail() {
                 </div>
                 <div className="flex justify-between py-2">
                   <dt className="text-charcoal-500">Made in</dt>
-                  <dd className="text-charcoal-900 font-medium">CORNBEF - USA</dd>
+                  <dd className="text-charcoal-900 font-medium">PHEW - USA</dd>
                 </div>
               </dl>
             </div>
